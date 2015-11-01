@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MyCircleProgressBar">
+        <attr name="max" format="integer" />
+        <attr name="radius" format="integer" />
+        <attr name="bgColor" format="color"/>
+        <attr name="fgColor" format="color" />
+        <attr name="drawStyle">
+            <enum name="STROKE" value="0" />
+            <enum name="FILL" value="1" />
+        </attr>
+        <attr name="strokeWidth" format="integer" />
+
+    </declare-styleable>
+</resources>

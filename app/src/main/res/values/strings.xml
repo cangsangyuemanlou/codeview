@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LiLiqing</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="share_text">该例演示当当前content没有垂直超过界面可滑动时，上面的AppBarLayout在上滑时不会影藏浮现。</string>
+    <string name="title_activity_sub">SubActivity</string>
+    <string name="card_view_1">秋风清，秋月明，落叶聚还散，寒鸦栖复惊。相思相见知何日？此时此夜难为情！入我相思门，知我相思苦。长相思兮长相忆，短相思兮无穷极。早知如此绊人心，何如当初莫相识。</string>
+    <string name="title_activity_views">ViewsActivity</string>
+
+</resources>
