@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">CodeView</string>
     <string name="action_settings">Settings</string>
+    <string name="latest">最近</string>
+    <string name="explore">本地</string>
+    <string name="project">项目</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
