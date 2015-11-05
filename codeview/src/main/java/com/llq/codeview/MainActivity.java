@@ -41,18 +41,16 @@ public class MainActivity extends AppCompatActivity {
         titles.add(getString(R.string.explore));
         titles.add(getString(R.string.project));
 
-        tabLayout.addTab(tabLayout.newTab().setText(titles.get(0)));
-        tabLayout.addTab(tabLayout.newTab().setText(titles.get(1)));
-        tabLayout.addTab(tabLayout.newTab().setText(titles.get(2)));
-
         List<Fragment> fragments = new ArrayList<>();
         fragments.add(new LatestFragment());
         fragments.add(new ExploreFragment());
         fragments.add(new ProjectFragment());
-        FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager(), fragments, titles);
+        FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager(),
+                fragments, titles);
         viewPager.setAdapter(adapter);
 
-        tabLayout.setupWithViewPager(viewPager);
         tabLayout.setTabsFromPagerAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
+
     }
 }
