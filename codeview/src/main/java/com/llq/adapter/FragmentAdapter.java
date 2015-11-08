@@ -6,9 +6,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import java.util.List;
 
-/**
- * Created by Administrator on 2015/11/2.
- */
 public class FragmentAdapter extends FragmentPagerAdapter {
 
     private List<String> titles;
@@ -34,4 +31,5 @@ public class FragmentAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         return titles.get(position);
     }
+
 }

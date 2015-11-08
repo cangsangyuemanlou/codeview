@@ -4,6 +4,8 @@
     <string name="latest">最近</string>
     <string name="explore">本地</string>
     <string name="project">项目 abcdefghij</string>
+    <string name="internal_storage">手机存储</string>
+    <string name="external_storage">外部存储</string>
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
