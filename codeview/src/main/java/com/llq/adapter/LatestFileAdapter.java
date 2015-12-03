@@ -11,9 +11,10 @@ import android.widget.TextView;
 import com.llq.codeview.R;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
-public class FileAdapter extends RecyclerView.Adapter<FileAdapter.MyViewHolder> {
+public class LatestFileAdapter extends RecyclerView.Adapter<LatestFileAdapter.MyViewHolder> {
 
     private Context context;
     private List<File> files;
@@ -23,16 +24,19 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.MyViewHolder> 
     //设置点击事件监听接口
     public interface OnItemClickListener {
         void onItemClick(View view, int position);
+
         void onItemLongClick(View view, int position);
     }
+
     // 点击事件监听对象
     private OnItemClickListener onItemClickListener;
+
     // 设置事件监听器
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
 
-    public FileAdapter(Context context, List<File> files) {
+    public LatestFileAdapter(Context context, List<File> files) {
         this.context = context;
         this.files = files;
         inflater = LayoutInflater.from(context);
@@ -45,15 +49,30 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.MyViewHolder> 
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = inflater.inflate(R.layout.list_item_layout, parent, false);
+        View itemView = inflater.inflate(R.layout.item_file_layout, parent, false);
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
-        holder.textView.setText(files.get(position).getName());
+        File file = files.get(position);
+        String fileName = file.getName();
+        if (file.isDirectory()) {
+            holder.ivFileImage.setImageResource(R.mipmap.folder);
+        } else if (file.isFile()) {
+            String type = fileName.substring(fileName.lastIndexOf(".") + 1).toLowerCase();
+            int resId = context.getResources().getIdentifier(type, "mipmap", context.getPackageName());
+            if (resId != 0) {
+                holder.ivFileImage.setImageResource(resId);
+            } else {
+                holder.ivFileImage.setImageResource(R.mipmap.default_fileicon);
+            }
+        }
+        holder.tvFileName.setText(file.getName());
+        holder.tvFileTime.setText(new SimpleDateFormat("yyyy-MM-dd HH:mm")
+                .format(file.lastModified()));
         // 如果定义了点击事件，则点击时启动相应的事件
-        if (onItemClickListener != null){
+        if (onItemClickListener != null) {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -77,15 +96,19 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.MyViewHolder> 
         return files.size();
     }
 
+
     public class MyViewHolder extends RecyclerView.ViewHolder {
         View itemView; // item的整体布局视图
-        ImageView imageView;
-        TextView textView;
+        ImageView ivFileImage;
+        TextView tvFileName;
+        TextView tvFileTime;
+
         public MyViewHolder(View itemView) {
             super(itemView);
             this.itemView = itemView;
-            imageView = (ImageView) itemView.findViewById(R.id.item_image_view);
-            textView = (TextView) itemView.findViewById(R.id.item_text_view);
+            ivFileImage = (ImageView) itemView.findViewById(R.id.item_image_view);
+            tvFileName = (TextView) itemView.findViewById(R.id.item_file_name);
+            tvFileTime = (TextView) itemView.findViewById(R.id.item_file_time);
         }
     }
 }
