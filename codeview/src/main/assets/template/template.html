@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=%s" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+	<script type="text/javascript" src="file:///android_asset/scripts/shCore.js"></script>
+	<link type="text/css" rel="stylesheet" href="file:///android_asset/styles/shCore.css"/>
+
+	<script type="text/javascript" src="file:///android_asset/scripts/shAutoloader.js"></script>
+	
+	<link type="text/css" rel="stylesheet" href="file:///android_asset/styles/shThemeMidnight.css"/>
+
+	<script type="text/javascript" src="file:///android_asset/scripts/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+    		SyntaxHighlighter.autoloader(
+            ['as3','actionscript3','scripts/shBrushAS3.js'],
+			['bash','shell','scripts/shBrushBash.js'],
+			['cf','coldfusion','scripts/shBrushColdFusion.js'],
+			['c','sharp','csharp','scripts/shBrushCSharp.js'],
+			['cpp','c','scripts/shBrushCpp.js'],
+			['css','scripts/shBrushCss.js'],
+			['delphi','pas','pascal','scripts/shBrushDelphi.js'],
+			['diff','patch','scripts/shBrushDiff.js'],
+			['erl','erlang','scripts/shBrushErlang.js'],
+			['groovy','scripts/shBrushGroovy.js'],
+			['js','jscript','javascript','scripts/shBrushJScript.js'],
+			['java','scripts/shBrushJava.js'],
+			['jfx','javafx','scripts/shBrushJavaFX.js'],
+			['perl','pl','scripts/shBrushPerl.js'],
+			['php','scripts/shBrushPhp.js'],
+			['plain','text','scripts/shBrushPlain.js'],
+			['ps','powershell','scripts/shBrushPowerShell.js'],
+			['py','python','scripts/shBrushPython.js'],
+			['rails','ror','ruby','scripts/shBrushRuby.js'],
+			['scala','scripts/shBrushScala.js'],
+			['sql','scripts/shBrushSql.js'],
+			['vb','vbnet','scripts/shBrushVb.js'],
+			['xml','xhtml','xslt','html','xhtml','scripts/shBrushXml.js']
+        );
+        SyntaxHighlighter.defaults['toolbar'] = false;
+	    SyntaxHighlighter.all(); 
+	})
+	</script>
+</head>
+<body style="margin: 0;">
+<pre class="brush: %s;">
+%s
+</pre>
+</body>
+</html>

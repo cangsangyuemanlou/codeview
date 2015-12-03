@@ -22,8 +22,11 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:22.+'
-    compile 'com.android.support:design:22.+'
-    compile 'com.android.support:support-v4:22.+'
-    compile 'com.android.support:recyclerview-v7:22.+'
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile 'com.android.support:design:22.2.1'
+    compile 'com.android.support:support-v4:22.2.1'
+    compile 'com.android.support:recyclerview-v7:22.2.1'
+    compile 'com.github.bmelnychuk:atv:1.2.7'
+    compile 'com.github.johnkil.print:print:1.3.1'
+    compile files('libs/cpdetector_1.0.10.jar')
 }

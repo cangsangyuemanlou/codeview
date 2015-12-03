@@ -2,6 +2,8 @@ package com.llq.fragments;
 
 import android.support.v4.app.Fragment;
 
+import java.io.File;
+
 public class BaseFragment extends Fragment {
 
     /**
@@ -16,5 +18,12 @@ public class BaseFragment extends Fragment {
     public boolean onBackPressed(){
         return false;
     };
+
+    public interface OnFileClickListener {
+        void onFileClick(File file);
+        void onFileLongClick(File file);
+    }
+
+    protected OnFileClickListener onFileClickListener;
 
 }

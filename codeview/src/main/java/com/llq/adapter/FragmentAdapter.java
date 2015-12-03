@@ -4,6 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.llq.fragments.ProjectFragment;
+
 import java.util.List;
 
 public class FragmentAdapter extends FragmentPagerAdapter {
@@ -32,4 +34,11 @@ public class FragmentAdapter extends FragmentPagerAdapter {
         return titles.get(position);
     }
 
+    @Override
+    public int getItemPosition(Object object) {
+        if (object instanceof ProjectFragment){
+            return POSITION_NONE; // 目的是在notifyDataChanged方法调用后重绘ProjectFragment
+        }
+        return super.getItemPosition(object);
+    }
 }

@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3f51b5</color>
+    <color name="colorPrimary">#3AAAA0</color>
     <color name="colorPrimaryDark">#0fe7eb</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="textColorPrimary">#3a3a3a</color>
+
+    <color name="tabSelectedTextColor">#3a3a3a</color>
+    <color name="tabIndicatorColor">#3a3a3a</color>
+    <color name="tabBackground">#f2f2f2</color>
+    <color name="tabTextColor">#acacac</color>
+
+    <color name="black_overlay">#66000000</color>
+
     <color name="gray">#d3d3d3</color>
     <color name="color1">#35f132</color>
     <color name="color2">#127fce</color>

@@ -46,7 +46,8 @@ public class ExploreFileAdapter extends BaseFileAdapter<ExploreFileAdapter.MyVie
             holder.ivFileImage.setImageResource(R.mipmap.folder);
         } else if (file.isFile()) {
             String type = fileName.substring(fileName.lastIndexOf(".") + 1).toLowerCase();
-            int resId = context.getResources().getIdentifier(type, "mipmap", context.getPackageName());
+            int resId = context.getResources().getIdentifier(type, "mipmap",
+                    context.getPackageName());
             if (resId != 0) {
                 holder.ivFileImage.setImageResource(resId);
             } else {
@@ -80,7 +81,6 @@ public class ExploreFileAdapter extends BaseFileAdapter<ExploreFileAdapter.MyVie
     public int getItemCount() {
         return files.size();
     }
-
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         View itemView; // item的整体布局视图

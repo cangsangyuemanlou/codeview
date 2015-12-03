@@ -14,27 +14,12 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-public class LatestFileAdapter extends RecyclerView.Adapter<LatestFileAdapter.MyViewHolder> {
+public class LatestFileAdapter extends BaseFileAdapter<LatestFileAdapter.MyViewHolder> {
 
     private Context context;
     private List<File> files;
 
     private LayoutInflater inflater;
-
-    //设置点击事件监听接口
-    public interface OnItemClickListener {
-        void onItemClick(View view, int position);
-
-        void onItemLongClick(View view, int position);
-    }
-
-    // 点击事件监听对象
-    private OnItemClickListener onItemClickListener;
-
-    // 设置事件监听器
-    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
-        this.onItemClickListener = onItemClickListener;
-    }
 
     public LatestFileAdapter(Context context, List<File> files) {
         this.context = context;
@@ -61,7 +46,8 @@ public class LatestFileAdapter extends RecyclerView.Adapter<LatestFileAdapter.My
             holder.ivFileImage.setImageResource(R.mipmap.folder);
         } else if (file.isFile()) {
             String type = fileName.substring(fileName.lastIndexOf(".") + 1).toLowerCase();
-            int resId = context.getResources().getIdentifier(type, "mipmap", context.getPackageName());
+            int resId = context.getResources().getIdentifier(type, "mipmap",
+                    context.getPackageName());
             if (resId != 0) {
                 holder.ivFileImage.setImageResource(resId);
             } else {
